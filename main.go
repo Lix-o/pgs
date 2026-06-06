@@ -1,6 +1,7 @@
 package main
 
 import (
+	httpServer "PostgreSQL/http"
 	simplsql "PostgreSQL/simpl_sql"
 	simpleconnection "PostgreSQL/simple_connection"
 	"context"
@@ -28,4 +29,11 @@ func main() {
 	}
 
 	fmt.Println("все *хуенно")
+
+	err = httpServer.StartHttp()
+	if err != nil {
+		fmt.Println("error", err)
+	} else {
+		fmt.Println("good")
+	}
 }
